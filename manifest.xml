@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
+    <iq:application id="e7226757ecc148c381ab7769599f851d" type="watchface" name="@Strings.AppName" entry="MenhirApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.2.0">
+        <iq:products>
+            <!-- fenix8pro47mm covers the 47mm and 51mm fenix 8 Pro -->
+            <iq:product id="fenix8pro47mm"/>
+        </iq:products>
+        <iq:permissions/>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>

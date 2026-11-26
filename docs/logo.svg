@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Black dial, ivory standing stone, coral rule like the face -->
+  <circle cx="128" cy="128" r="124" fill="#000" stroke="#8A8478" stroke-width="4"/>
+  <path d="M100 178 L96 120 L104 74 L118 50 L134 42 L150 56 L156 88 L162 132 L158 178 Z" fill="#F2E8D5"/>
+  <path d="M134 42 L150 56 L156 88 L162 132 L158 178 L140 178 L144 120 L140 70 Z" fill="#D9CDB8"/>
+  <rect x="60" y="182" width="136" height="6" rx="1" fill="#FF6F5E"/>
+</svg>
