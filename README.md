@@ -30,7 +30,7 @@ Change these on the watch itself, through the watch face options (hold **MENU**,
 
 | Setting | Options |
 |---|---|
-| Top / Left / Middle / Right / Bottom field | None, Date, Battery, Steps, Heart rate, Calories, Distance, Floors, Notifications, Weather |
+| Top / Left / Middle / Right / Bottom field | None, Battery, Battery days, Calories, Date, Distance, Floors, Heart rate, Notifications, Steps, Weather |
 | Top / Left / Middle / Right / Bottom color | Ivory, Dim, Coral, White, Red, Orange, Yellow, Green, Blue, Purple |
 | Divider color | Same colors as above (Coral by default) |
 | Step bar | Curved, Straight |

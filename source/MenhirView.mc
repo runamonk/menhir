@@ -165,6 +165,7 @@ class MenhirView extends WatchUi.WatchFace {
         if (kind == 7) { return :stairs; }
         if (kind == 8) { return :bell; }
         if (kind == 9) { return Icons.weather(); }
+        if (kind == 10) { return :bolt; }
         return null;
     }
 
@@ -205,6 +206,11 @@ class MenhirView extends WatchUi.WatchFace {
                 temp = temp * 9 / 5 + 32;
             }
             return temp.format("%.0f") + "°";
+        } else if (kind == 10) {
+            // Days of battery left, as the watch estimates it (API 3.3+)
+            var st = System.getSystemStats();
+            if (!(st has :batteryInDays) || st.batteryInDays == null) { return "--"; }
+            return st.batteryInDays.format("%d") + "d";
         }
         return v == null ? "--" : v.format("%d");
     }

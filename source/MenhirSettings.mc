@@ -7,7 +7,9 @@ import Toybox.WatchUi;
 // Slots: 0 top, 1 left, 2 middle, 3 right, 4 bottom.
 module Cfg {
     const SLOTS = ["Top", "Left", "Middle", "Right", "Bottom"];
-    const FIELDS = ["None", "Date", "Battery", "Steps", "Heart rate", "Calories", "Distance", "Floors", "Notifications", "Weather"];
+    const FIELDS = ["None", "Date", "Battery", "Steps", "Heart rate", "Calories", "Distance", "Floors", "Notifications", "Weather", "Battery days"];
+    // Order the menu steps through: None, then alphabetical. Saved values stay FIELDS indexes.
+    const FIELD_ORDER = [0, 2, 10, 5, 1, 6, 7, 4, 8, 3, 9];
     const COLOR_NAMES = ["Ivory", "Dim", "Coral", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
     const COLORS = [0xF2E8D5, 0x8A8478, 0xFF6F5E, 0xFFFFFF, 0xFF3B30, 0xFF9500, 0xFFD60A, 0x34C759, 0x0A84FF, 0xBF5AF2];
     const DEF_FIELD = [1, 2, 4, 9, 3];
@@ -99,7 +101,11 @@ class MenhirSettingsDelegate extends WatchUi.Menu2InputDelegate {
         var names = isField ? Cfg.FIELDS : Cfg.COLOR_NAMES;
         var v = Storage.getValue(id);
         if (v == null) { v = isField ? Cfg.DEF_FIELD[i] : Cfg.DEF_COLOR[i]; }
-        v = (v + 1) % names.size();
+        if (isField) {
+            v = Cfg.FIELD_ORDER[(Cfg.FIELD_ORDER.indexOf(v) + 1) % Cfg.FIELD_ORDER.size()];
+        } else {
+            v = (v + 1) % names.size();
+        }
         Storage.setValue(id, v);
         item.setSubLabel(names[v]);
     }
