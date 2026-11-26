@@ -32,7 +32,9 @@ Change these on the watch itself, through the watch face options (hold **MENU**,
 |---|---|
 | Top / Left / Middle / Right / Bottom field | None, Date, Battery, Steps, Heart rate, Calories, Distance, Floors, Notifications, Weather |
 | Top / Left / Middle / Right / Bottom color | Ivory, Dim, Coral, White, Red, Orange, Yellow, Green, Blue, Purple |
+| Divider color | Same colors as above (Coral by default) |
 | Step bar | Curved, Straight |
+| Step bar color | Same colors as above (Coral by default) |
 | Icons | On, Off |
 
 The step bar only appears when the bottom field is set to Steps. The weather icon follows the current conditions, and shows a moon after sunset.

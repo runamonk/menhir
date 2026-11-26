@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 class MenhirView extends WatchUi.WatchFace {
     const IVORY = 0xF2E8D5;
     const DIM = 0x8A8478;
-    const CORAL = 0xFF6F5E;
 
     var _sleeping = false;
 
@@ -60,9 +59,9 @@ class MenhirView extends WatchUi.WatchFace {
         dc.setColor(IVORY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(w / 2, h * 44 / 100, big, time, center);
 
-        // Coral rule, same width as the time
+        // Divider rule, same width as the time
         var tw = dc.getTextWidthInPixels(time, big);
-        dc.setColor(CORAL, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(Cfg.color(5), Graphics.COLOR_TRANSPARENT);
         dc.fillRectangle((w - tw) / 2, h * 63 / 100, tw, 3);
 
         // Three bottom fields
@@ -99,7 +98,7 @@ class MenhirView extends WatchUi.WatchFace {
                 dc.setColor(DIM, Graphics.COLOR_TRANSPARENT);
                 dc.drawArc(w / 2, h / 2, r, Graphics.ARC_COUNTER_CLOCKWISE, 240, 300);
                 if (deg > 0) {
-                    dc.setColor(CORAL, Graphics.COLOR_TRANSPARENT);
+                    dc.setColor(Cfg.color(6), Graphics.COLOR_TRANSPARENT);
                     dc.drawArc(w / 2, h / 2, r, Graphics.ARC_COUNTER_CLOCKWISE, 240, 240 + deg);
                 }
                 dc.setPenWidth(1);
@@ -111,7 +110,7 @@ class MenhirView extends WatchUi.WatchFace {
                 if (fill > bw) { fill = bw; }
                 dc.setColor(DIM, Graphics.COLOR_TRANSPARENT);
                 dc.fillRectangle(bx, by, bw, 3);
-                dc.setColor(CORAL, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(Cfg.color(6), Graphics.COLOR_TRANSPARENT);
                 dc.fillRectangle(bx, by, fill, 3);
             }
         }

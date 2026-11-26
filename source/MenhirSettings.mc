@@ -11,7 +11,8 @@ module Cfg {
     const COLOR_NAMES = ["Ivory", "Dim", "Coral", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
     const COLORS = [0xF2E8D5, 0x8A8478, 0xFF6F5E, 0xFFFFFF, 0xFF3B30, 0xFF9500, 0xFFD60A, 0x34C759, 0x0A84FF, 0xBF5AF2];
     const DEF_FIELD = [1, 2, 4, 9, 3];
-    const DEF_COLOR = [1, 0, 0, 0, 0];
+    // Slots 0-4, then 5 = divider, 6 = step bar fill
+    const DEF_COLOR = [1, 0, 0, 0, 0, 2, 2];
 
     function field(i) {
         var v = Storage.getValue("f" + i);
@@ -48,7 +49,11 @@ class MenhirSettingsMenu extends WatchUi.Menu2 {
             addItem(new WatchUi.MenuItem(Cfg.SLOTS[i] + " field", Cfg.FIELDS[Cfg.field(i)], "f" + i, null));
             addItem(new WatchUi.MenuItem(Cfg.SLOTS[i] + " color", Cfg.COLOR_NAMES[c == null ? Cfg.DEF_COLOR[i] : c], "c" + i, null));
         }
+        var c5 = Storage.getValue("c5");
+        var c6 = Storage.getValue("c6");
+        addItem(new WatchUi.MenuItem("Divider color", Cfg.COLOR_NAMES[c5 == null ? Cfg.DEF_COLOR[5] : c5], "c5", null));
         addItem(new WatchUi.MenuItem("Step bar", Cfg.BAR_NAMES[Cfg.curvedBar() ? 0 : 1], "bar", null));
+        addItem(new WatchUi.MenuItem("Step bar color", Cfg.COLOR_NAMES[c6 == null ? Cfg.DEF_COLOR[6] : c6], "c6", null));
         addItem(new WatchUi.MenuItem("Icons", Cfg.ONOFF[Cfg.icons() ? 0 : 1], "icons", null));
     }
 }
