@@ -40,7 +40,7 @@ class MenhirView extends WatchUi.WatchFace {
         if (_sleeping && System.getDeviceSettings().requiresBurnInProtection) {
             var dx = (t.min % 5 - 2) * 6;
             var dy = (t.min % 3 - 1) * 6;
-            dc.setColor(DIM, Graphics.COLOR_TRANSPARENT);
+            dc.setColor(Cfg.AOD_COLORS[Cfg.aod()], Graphics.COLOR_TRANSPARENT);
             var gap = (dc.getFontHeight(Graphics.FONT_NUMBER_MEDIUM) + dc.getFontHeight(Graphics.FONT_SMALL)) / 2;
             dc.drawText(w / 2 + dx, h / 2 - gap + dy, Graphics.FONT_SMALL, date, center);
             dc.drawText(w / 2 + dx, h / 2 + dy, Graphics.FONT_NUMBER_MEDIUM, hh + ":" + mm, center);

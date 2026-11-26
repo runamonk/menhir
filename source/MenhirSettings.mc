@@ -35,6 +35,15 @@ module Cfg {
         return v == null || v == 0;
     }
 
+    // Always-on text color, stored as "aod": 0 low, 1 medium (default), 2 high
+    const AOD_NAMES = ["Low", "Medium", "High"];
+    const AOD_COLORS = [0x5A5650, 0x8A8478, 0xC8C0B0];
+
+    function aod() {
+        var v = Storage.getValue("aod");
+        return v == null ? 1 : v;
+    }
+
     function color(i) {
         var v = Storage.getValue("c" + i);
         return COLORS[v == null ? DEF_COLOR[i] : v];
@@ -55,6 +64,7 @@ class MenhirSettingsMenu extends WatchUi.Menu2 {
         addItem(new WatchUi.MenuItem("Step bar", Cfg.BAR_NAMES[Cfg.curvedBar() ? 0 : 1], "bar", null));
         addItem(new WatchUi.MenuItem("Step bar color", Cfg.COLOR_NAMES[c6 == null ? Cfg.DEF_COLOR[6] : c6], "c6", null));
         addItem(new WatchUi.MenuItem("Icons", Cfg.ONOFF[Cfg.icons() ? 0 : 1], "icons", null));
+        addItem(new WatchUi.MenuItem("AOD brightness", Cfg.AOD_NAMES[Cfg.aod()], "aod", null));
     }
 }
 
@@ -76,6 +86,12 @@ class MenhirSettingsDelegate extends WatchUi.Menu2InputDelegate {
             var n = Cfg.icons() ? 1 : 0;
             Storage.setValue("icons", n);
             item.setSubLabel(Cfg.ONOFF[n]);
+            return;
+        }
+        if (id.equals("aod")) {
+            var a = (Cfg.aod() + 1) % Cfg.AOD_NAMES.size();
+            Storage.setValue("aod", a);
+            item.setSubLabel(Cfg.AOD_NAMES[a]);
             return;
         }
         var i = id.substring(1, 2).toNumber();

@@ -36,6 +36,9 @@ Change these on the watch itself, through the watch face options (hold **MENU**,
 | Step bar | Curved, Straight |
 | Step bar color | Same colors as above (Coral by default) |
 | Icons | On, Off |
+| AOD brightness | Low, Medium, High |
+
+AOD brightness doesn't change the screen's brightness, which a watch face can't do. It picks how light a gray the always-on date and time are drawn in. Low on top of a dim system setting can be hard to read outdoors.
 
 The step bar only appears when the bottom field is set to Steps. The weather icon follows the current conditions, and shows a moon after sunset.
 
