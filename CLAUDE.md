@@ -24,7 +24,7 @@ A Garmin Connect IQ watch face (Monkey C) for the user's **fēnix 8 Pro 51mm** (
 - Compiles cleanly (2026-11-26) with SDK 9.3.0 and the Monkey C VS Code extension 1.1.3.
 - Product ID is `fenix8pro47mm`. Garmin has no separate 51mm profile; that one covers 47mm, 51mm and MicroLED (454x454).
 - Developer key: %USERPROFILE%\.garmin\developer_key.der (.pem alongside).
-- Build: monkeyc -f monkey.jungle -d fenix8pro47mm -o bin\WatchFace1.prg -y <key> -w
+- Build: monkeyc -f monkey.jungle -d fenix8pro47mm -o bin\Menhir.prg -y <key> -w
 - Harmless warning: the 70x70 launcher icon gets scaled to 65x65.
 - README screenshots (docs/screenshot.png, docs/always-on.png) come from the simulator's File > Save Screen Capture (454x454), masked round. Data used: Simulation > Activity Monitoring > Set Activity Monitor Info (goal 10,000, 6,842 steps), the default simulated weather, and Activity Data playback for heart rate. docs/logo.svg is a hand-drawn standing stone on the coral rule.
 - Layout percentages were guessed from a tiny thumbnail. Expect to tweak them in the simulator.

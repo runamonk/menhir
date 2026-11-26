@@ -44,19 +44,19 @@ These settings live on the watch, not in the Connect IQ phone app. The phone app
 You need the [Connect IQ SDK](https://developer.garmin.com/connect-iq/sdk/) (built with 9.3.0) and a developer key.
 
 ```sh
-monkeyc -f monkey.jungle -d fenix8pro47mm -o bin/WatchFace1.prg -y <path-to-developer_key.der> -w
+monkeyc -f monkey.jungle -d fenix8pro47mm -o bin/Menhir.prg -y <path-to-developer_key.der> -w
 ```
 
 `fenix8pro47mm` is Garmin's profile for the 47mm, 51mm and MicroLED fēnix 8 Pro. To try it in the simulator:
 
 ```sh
 connectiq            # start the simulator
-monkeydo bin/WatchFace1.prg fenix8pro47mm
+monkeydo bin/Menhir.prg fenix8pro47mm
 ```
 
 ## Installing
 
-Connect the watch over USB and copy `bin/WatchFace1.prg` to `GARMIN/Apps` on the watch. Then pick Menhir from the watch face list.
+Connect the watch over USB and copy `bin/Menhir.prg` to `GARMIN/Apps` on the watch. Then pick Menhir from the watch face list.
 
 ## Credits
 
